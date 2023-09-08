@@ -2,4 +2,4 @@ function AllPostsPage() {
 
 
 }
-export default AllPostsPage;
+export default AllPostsPage; 
