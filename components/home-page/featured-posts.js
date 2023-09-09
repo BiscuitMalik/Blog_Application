@@ -4,7 +4,7 @@ import classes from './featured-posts.module.css'
 function FeaturedPosts(props) {
     return (
         <section className={classes.latest}>
-            <h1>Featured Post</h1>
+            <h2>Featured Post</h2>
             <PostGrid posts={props.posts} />
         </section>
     )
