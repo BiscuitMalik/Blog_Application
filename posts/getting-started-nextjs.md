@@ -2,7 +2,7 @@
 title: "Getting start with Nextjs"
 image: "getting-started-nextjs.png"
 date: "2022-02-12"
-excerpt: "ad ad q  c zx zc asd as asda sas qw xcz ad ad q  c zx zc asd as asda sas qw xcz "
+excerpt: "Learn Next JS"
 isFeatured: true
 ---
 

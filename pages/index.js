@@ -1,39 +1,10 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Hero from "@/components/home-page/hero";
+import { getFeaturedPosts } from "@/lib/post-util";
 import FeaturedPosts from "@/components/home-page/featured-posts";
-const DUMMY_POST = [
-    {
-        title: 'Getting start with Nextjs',
-        image: 'getting-started-nextjs.png',
-        date: '2022-02-12',
-        excerpt: 'ad ad q  c zx zc asd as asda sas qw xcz ad ad q  c zx zc asd as asda sas qw xcz ',
-        slug: 'getting-started-nextjs'
-    },
-    {
-        title: 'Getting start with Nextjs',
-        image: 'getting-started-nextjs.png',
-        date: '2022-02-12',
-        excerpt: 'ad ad q  c zx zc asd as asda sas qw xcz ad ad q  c zx zc asd as asda sas qw xcz ',
-        slug: 'getting-started-nextjs'
-    },
-    {
-        title: 'Getting start with Nextjs',
-        image: 'getting-started-nextjs.png',
-        date: '2022-02-12',
-        excerpt: 'ad ad q  c zx zc asd as asda sas qw xcz ad ad q  c zx zc asd as asda sas qw xcz ',
-        slug: 'getting-started-nextjs'
-    },
-    {
-        title: 'Getting start with Nextjs',
-        image: 'getting-started-nextjs.png',
-        date: '2022-02-12',
-        excerpt: 'ad ad q  c zx zc asd as asda sas qw xcz ad ad q  c zx zc asd as asda sas qw xcz ',
-        slug: 'getting-started-nextjs'
-    }
-]
 
-function HomePage() {
+function HomePage(props) {
     return (
         <Fragment>
             <Head>
@@ -42,7 +13,7 @@ function HomePage() {
 
             </Head>
             <Hero />
-            <FeaturedPosts posts={DUMMY_POST} />
+            <FeaturedPosts posts={props.posts} />
         </Fragment>
     )
 }
@@ -51,3 +22,12 @@ export default HomePage;
 // 1) Hero section
 // 2) Featured Section
 // 3) Nav bar which is the part of _app.js
+
+export function getStaticProps() {
+    const featuredPosts = getFeaturedPosts()
+    return {
+        props: {
+            posts: featuredPosts,
+        }
+    }
+}
