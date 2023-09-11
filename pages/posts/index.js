@@ -1,4 +1,6 @@
 import AllPosts from "@/components/posts/all-posts.module";
+import Head from "next/head";
+import { Fragment } from "react";
 const DUMMY_POST = [
     {
         title: 'Getting start with Nextjs',
@@ -32,7 +34,13 @@ const DUMMY_POST = [
 
 function AllPostsPage() {
     return (
-        <AllPosts posts={DUMMY_POST} />
+        <Fragment>
+            <Head>
+                <title>All posts</title>
+                <meta name="description" content="All posts related to programming" />
+            </Head>
+            <AllPosts posts={DUMMY_POST} />
+        </Fragment>
     )
 
 }

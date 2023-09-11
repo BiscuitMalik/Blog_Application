@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Head from "next/head";
 import Hero from "@/components/home-page/hero";
 import FeaturedPosts from "@/components/home-page/featured-posts";
 const DUMMY_POST = [
@@ -35,6 +36,11 @@ const DUMMY_POST = [
 function HomePage() {
     return (
         <Fragment>
+            <Head>
+                <title>Haroon' Blog</title>
+                <meta name='description' content="Posts about development" />
+
+            </Head>
             <Hero />
             <FeaturedPosts posts={DUMMY_POST} />
         </Fragment>
