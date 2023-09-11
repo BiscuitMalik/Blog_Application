@@ -7,11 +7,11 @@ function Notification(props) {
 
   let statusClasses = '';
 
-  if (status === 'Success') {
+  if (status === 'success') {
     statusClasses = classes.success;
   }
 
-  if (status === 'Error') {
+  if (status === 'error') {
     statusClasses = classes.error;
   }
 
